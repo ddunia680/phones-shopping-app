@@ -1,0 +1,109 @@
+.wrapper {
+    background-color: white;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 30;
+    bottom: 0;
+    top: 9%;
+
+}
+.cartVisible {
+    animation: showCart 500ms ease-in-out forwards;
+}
+.cartInvisible {
+    animation: removeCart 500ms ease-in-out forwards;
+}
+
+h1 {
+    font-family: 'Segoe Script';
+}
+
+h1 span {
+    color: rgb(46,48,117);
+}
+
+.recordsWrapper {
+    width: 100%;
+    /* background-color: blueviolet; */
+    overflow: auto;
+}
+.headers {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.headers h3 {
+    width: 10%;
+}
+
+.bigTotals {
+    /* font-size: 15px; */
+    font-family: 'Segoe Script';
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+.clearCart {
+    font-size: 20px;
+    color: rgb(223, 146, 156);
+    border-color: rgb(223, 146, 156);
+}
+
+.clearCart:hover {
+    background-color: rgb(223, 146, 156);
+    color: rgb(210, 64, 83);
+}
+.bigTotals h2 {
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        top: 7%;
+    }
+
+    h1 {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .headers {
+        width: 500px;
+        overflow-x: scroll;
+        background-color: aliceblue;
+    }
+
+    .bigTotals h2 {
+        font-size: 12px;
+    }
+
+    .clearCart {
+        font-size: 12px;
+    }
+}
+
+@keyframes showCart {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes removeCart {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

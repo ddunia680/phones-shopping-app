@@ -1,0 +1,188 @@
+.wrapper {
+    position: fixed;
+    left: 0;
+    top: 9%;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 500;
+}
+
+.Visible {
+    animation: addDetails 500ms ease-in-out forwards;
+}
+
+.Invisible {
+    animation: removeDetails 500ms ease-in-out forwards;
+}
+
+.wrapper h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 80px 0;
+    color: rgb(46,48,117);
+}
+
+.detailsWrapper {
+    width: 100%;
+    height: fit-content;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imageWr {
+    width: 47%;
+    height: 500px;
+    /* background-color: brown; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+}
+
+.imageWr img {
+    width: 70%;
+    height: 90%;
+}
+
+.wordsWrapper {
+    width: 47%;
+    /* background-color: yellow; */
+    margin-right: 2%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.wordsWrapper h1 {
+    color: black;
+    margin: 5px 0;
+}
+.model {
+    font-family:'Segoe Script';
+    margin: 5px 0;
+}
+.price {
+    color: rgb(46,48,117);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+.wordsWrapper h5 {
+    margin: 5px 0;
+}
+.wordsWrapper h4 {
+    margin: 5px 0;
+    color: rgb(72, 71, 71);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.buttonWrapper {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonWrapper button {
+    margin: 10px 5px;
+}
+
+.toCart {
+    border-color: rgb(184, 126, 61);
+    color: rgb(184, 126, 61);
+}
+
+.toCart:hover {
+    background-color: rgb(184, 126, 61);
+    color: rgb(97, 62, 21);
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        top: 7.5%;
+        overflow-y: auto;
+    }
+
+    .wrapper h1 {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+
+    .detailsWrapper {
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .imageWr {
+        width: 90%;
+        height: 200px;
+    }
+
+    .imageWr img {
+        width: 85%;
+        height: 95%;
+    }
+
+    .wordsWrapper {
+        width: 90%;
+        height: 450px;
+        margin-right: 1%;
+        align-items: center;
+    }
+    .wordsWrapper h1 {
+        margin: 2px 0;
+    }
+
+    .model {
+        font-family:'Segoe Script';
+        margin: 2px 0;
+        font-size: 13px;
+    }
+    .price {
+        margin: 2px 0;
+        font-size: 15px;
+    }
+    
+    .wordsWrapper h5 {
+        margin: 2px 0;
+        font-size: 11px;
+    }
+    .wordsWrapper h4 {
+        margin: 2px 0;
+        font-size: 12px;
+        text-align: center;
+    }
+    /* .buttonWrapper {
+        height: 20px;
+    } */
+
+}
+
+@keyframes addDetails {
+    0% {
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes removeDetails {
+    0% {
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
