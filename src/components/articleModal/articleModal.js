@@ -1,10 +1,13 @@
 import React from 'react';
 
 import classes from './articleModal.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { SETCARTVISIBILITY } from '../../store/cart';
+
 const ArticleModal = props => {
     const articles = useSelector(state => state.articles.articles);
     const theElement = articles.find(el => el.id === props.elementID);
+    let dispatch = useDispatch();
 
     const wrapperClasses = [classes.wrapper, props.isVisible ? classes.modalOn : classes.modalOut ]
     return (
@@ -22,7 +25,7 @@ const ArticleModal = props => {
                 <button 
                     className={classes.GoToCart} 
                     onClick={() => {
-                        props.showCart(true);
+                        dispatch(SETCARTVISIBILITY(true));
                         props.ModalVisible(false);
                     }}>
                         Go To Cart

@@ -2,7 +2,7 @@ import React from 'react';
 import CartRecord from '../../components/CartRecord/CartRecord';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
-import { CLEARITEMS } from '../../store/cart';
+import { CLEARITEMS, SETCARTVISIBILITY } from '../../store/cart';
 import classes from './Cart.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const Cart = props => {
     let dispatch = useDispatch();
     const cartElements = useSelector(state => state.cart.cart);
-    console.log(cartElements);
+    // console.log(cartElements);
     const totalPrice = useSelector(state => state.cart.totalPrice);
     // const [elToDisplay, setElToDisplay] = useState([]);
     let filteredEl = [];
@@ -25,7 +25,7 @@ const Cart = props => {
 
     const clearCart = () => {
         dispatch(CLEARITEMS());
-        props.setShowCart(false);
+        dispatch(SETCARTVISIBILITY(false));
     }
 
     return (

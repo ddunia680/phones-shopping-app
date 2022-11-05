@@ -20,7 +20,7 @@ const PhonesDisplay = props => {
 
             <div className={classes.articlesWrapper}>
                 {articles.map(el => {
-                    return <ArticleItem image={el.image} name={el.name} price={el.price} key={el.id} id={el.id} addToCart={addToCart} backVisible={props.backVisible} showDetails={props.showDetails}/>
+                    return <ArticleItem image={el.image} name={el.name} price={el.price} key={el.id} id={el.id} addToCart={addToCart} backVisible={props.backVisible} showDetails={props.showDetails} setID={props.setID}/>
                 })}
             </div>
         </div>

@@ -6,16 +6,18 @@ import ArticleModal from '../components/articleModal/articleModal';
 import Transition from 'react-transition-group/Transition';
 import Cart from './Cart/Cart';
 import ArticleDetails from './FullArticleDetails/ArticleDetails';
+import { useSelector } from 'react-redux';
+// import { SETCARTVISIBILITY } from '../store/cart';
 
 function Builder() {
     const [modalVisible, setModalVisibility] = useState(false);
     const [modalElID, setModalElID] = useState();
-    const [showCart, setShowCart] = useState(false);
+    const showCart = useSelector(state => state.cart.cartVisible);
     const [showDetails, setShowDetails] = useState(false);
     // console.log(showCart);
     return (
         <div>
-            <Toolbar setShowCart={setShowCart}/>
+            <Toolbar/>
             <PhonesDisplay 
                 backVisible={setModalVisibility} 
                 setID={setModalElID}
@@ -35,7 +37,6 @@ function Builder() {
                         isVisible={modalVisible} 
                         elementID={modalElID ? modalElID : null}
                         ModalVisible={setModalVisibility}
-                        showCart={setShowCart}
                     />
                 )}
             </Transition>
@@ -45,7 +46,7 @@ function Builder() {
                 mountOnEnter
                 unmountOnExit
             >
-                <Cart showCart={showCart} setShowCart={setShowCart}/>
+                <Cart showCart={showCart}/>
             </Transition>
             <Transition
                 in={showDetails}
@@ -55,9 +56,9 @@ function Builder() {
             >
                 {state => (
                     <ArticleDetails 
+                        id={modalElID ? modalElID : null}
                         showDetails={showDetails} 
-                        setShowDetails={setShowDetails}
-                        setShowCart={setShowCart}/>
+                        setShowDetails={setShowDetails}/>
                 )}
             </Transition>
             

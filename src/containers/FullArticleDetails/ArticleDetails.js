@@ -1,21 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { SETCARTVISIBILITY, ADDITEM } from '../../store/cart';
 import classes from './ArticleDetails.module.css';
-import prod from './image/product-2.png';
 
 const ArticleDetails = props => {
+    let dispatch = useDispatch();
+   let articles = useSelector(state => state.articles.articles);
+   let theEl = articles.find(el => el.id === props.id);
+
     const wrapperClasses = [classes.wrapper, props.showDetails ? classes.Visible : classes.Invisible];
     return (
         <div className={wrapperClasses.join(' ')}>
             <h1>Samsung S7</h1>
             <div className={classes.detailsWrapper}>
                 <div className={classes.imageWr}>
-                    <img src={prod} alt='' />
+                    <img src={theEl.image} alt='' />
                 </div>
                 <div className={classes.wordsWrapper}>
-                    <h1>Model: Samsung S7 </h1>
-                    <h2 className={classes.model}>MADE BY : SAMSUNG</h2>
-                    <h2 className={classes.price}>PRICE : $ 16</h2>
+                    <h1>Model: {theEl.name}</h1>
+                    <h2 className={classes.model}>MADE BY : {theEl.made}</h2>
+                    <h2 className={classes.price}>PRICE : $ {theEl.price}</h2>
                     <h5>Some Info About Product: </h5>
                     <h4>That's a little messy. Try jsfiddle.net/n8JEy/4 - and you didn't pass i to the callback as the second param
                     Ian
@@ -37,7 +42,8 @@ const ArticleDetails = props => {
                             className={classes.toCart}
                             onClick={() => {
                                 props.setShowDetails(false);
-                                props.setShowCart(prev => !prev);
+                                dispatch(SETCARTVISIBILITY(true));
+                                dispatch(ADDITEM(theEl));
                             }}
                         >
                             Add To Cart

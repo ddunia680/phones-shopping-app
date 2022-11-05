@@ -14,14 +14,14 @@ const articles = createSlice({
     name: 'Articles',
     initialState: {
         articles: [
-            {image: prod1, name: 'Google Pixel - Black', price: 10, id: 100},
-            {image: prod2, name: 'Samsung S7', price: 16, id: 101},
-            {image: prod3, name: 'HTC 10 - Black', price: 8, id: 102},
-            {image: prod4, name: 'HTC 10 - White', price: 18, id: 103},
-            {image: prod5, name: 'HTC 10 - Red', price: 16, id: 104},
-            {image: prod6, name: 'IPhone 4 - Black', price: 22, id: 105},
-            {image: prod7, name: 'IPhone 5s - Black', price: 30, id: 106},
-            {image: prod8, name: 'IPhone 6 - White', price: 35, id: 107}
+            {image: prod1, name: 'Google Pixel - Black', price: 10, made: 'Google', id: 100},
+            {image: prod2, name: 'Samsung S7', price: 16,made: 'Samsung', id: 101},
+            {image: prod3, name: 'HTC 10 - Black', price: 8,made: 'Huawei', id: 102},
+            {image: prod4, name: 'HTC 10 - White', price: 18,made: 'Huawei', id: 103},
+            {image: prod5, name: 'HTC 10 - Red', price: 16,made: 'Huawei', id: 104},
+            {image: prod6, name: 'IPhone 4 - Black', price: 22,made: 'Apple Inc', id: 105},
+            {image: prod7, name: 'IPhone 5s - Black', price: 30,made: 'Apple Inc', id: 106},
+            {image: prod8, name: 'IPhone 6 - White', price: 35,made: 'Apple Inc', id: 107}
         ]
     },
 

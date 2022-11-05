@@ -24,7 +24,7 @@ function CartRecord(props) {
     const addItem = (id) => {
         const element = articles.find(el => el.id === id);
         dispatch(ADDITEM(element));
-        console.log(element);
+        // console.log(element);
     }
 
     return (

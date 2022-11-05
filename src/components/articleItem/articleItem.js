@@ -37,7 +37,10 @@ function ArticleItem(props) {
     return (
         <div className={classes.wrapper} onMouseOver={showCartOption} onMouseLeave={removeCartOption}>
             <div className={imgWrapperClass}>
-                <img className={classes.artImage} src={props.image} alt='' onClick={() => props.showDetails(true)}/>
+                <img className={classes.artImage} src={props.image} alt='' onClick={() => {
+                    props.setID(props.id);
+                    props.showDetails(true);
+                }}/>
             </div>
             <div className={classes.info}>
                 <h5>{props.name}</h5>

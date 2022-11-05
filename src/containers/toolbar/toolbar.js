@@ -1,19 +1,23 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faVolumeControlPhone } from '@fortawesome/free-solid-svg-icons';
+
+import { SETCARTVISIBILITY } from '../../store/cart';
 import logo from './images/logo.svg';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import classes from './toolbar.module.css';
-function toolbar(props) {
+import { useDispatch, useSelector } from 'react-redux';
+function Toolbar(props) {
+    let dispatch = useDispatch();
+    let showCart = useSelector(state => state.cart.cartVisible);
     return (
         <div>
             <header className={classes.header}>
-                <div onClick={() => props.setShowCart(false)}>
+                <div>
                     <span><img src={logo} alt='' /></span>
-                    <p>Products</p>
+                    <p onClick={() => dispatch(SETCARTVISIBILITY(false))}>Products</p>
                 </div>
-                <button onClick={() => props.setShowCart(prev => !prev)}>
+                <button onClick={() => dispatch(SETCARTVISIBILITY(!showCart))}>
                     <span>{<FontAwesomeIcon icon={faShoppingCart}/>}</span>
                     My Cart
                 </button>
@@ -22,4 +26,4 @@ function toolbar(props) {
     );
 }
 
-export default toolbar;
+export default Toolbar;
