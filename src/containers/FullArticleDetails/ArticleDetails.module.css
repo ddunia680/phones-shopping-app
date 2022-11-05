@@ -126,7 +126,7 @@
 
     .imageWr {
         width: 90%;
-        height: 200px;
+        height: 250px;
     }
 
     .imageWr img {
@@ -141,25 +141,25 @@
         align-items: center;
     }
     .wordsWrapper h1 {
-        margin: 2px 0;
+        margin: 4px 0;
     }
 
     .model {
         font-family:'Segoe Script';
-        margin: 2px 0;
+        margin: 4px 0;
         font-size: 13px;
     }
     .price {
-        margin: 2px 0;
+        margin: 4px 0;
         font-size: 15px;
     }
     
     .wordsWrapper h5 {
-        margin: 2px 0;
+        margin: 4px 0;
         font-size: 11px;
     }
     .wordsWrapper h4 {
-        margin: 2px 0;
+        margin: 4px 0;
         font-size: 12px;
         text-align: center;
     }
