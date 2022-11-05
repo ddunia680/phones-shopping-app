@@ -34,6 +34,9 @@
     height: 100%;
 }
 
+.header div p:hover {
+    cursor: pointer;
+}
 .cartDiv {
     margin-right: 4%;
     border-radius: 10px;
@@ -55,6 +58,7 @@
     color: rgb(13, 81, 130);
     background-color: rgb(22,150,241);
     transition: all 300ms ease-in;
+    cursor: pointer;
 }
 
 
