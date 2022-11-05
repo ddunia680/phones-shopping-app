@@ -17,10 +17,10 @@ function Toolbar(props) {
                     <span><img src={logo} alt='' /></span>
                     <p onClick={() => dispatch(SETCARTVISIBILITY(false))}>Products</p>
                 </div>
-                <button onClick={() => dispatch(SETCARTVISIBILITY(!showCart))}>
+                <div className={classes.cartDiv} onClick={() => dispatch(SETCARTVISIBILITY(!showCart))}>
                     <span>{<FontAwesomeIcon icon={faShoppingCart}/>}</span>
                     My Cart
-                </button>
+                </div>
             </header>
         </div>
     );
